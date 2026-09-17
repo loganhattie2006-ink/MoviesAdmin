@@ -1,6 +1,8 @@
-This is a project for creating a rotten tomatoes style movie review website,
+# Movie Review Admin Panel
 
-This specific section is for creating an admin panel for the site
+## Description
+This is the admin panel component of a rotten tomatoes style movie review website, it will allow staff to login and manage the database of movies for the site and for critics to manage and post there reviews 
 
-Its being created in order to allow employees to manage the database of movies using CRUD 
-It should also have another type of login for critics to post reviews for the films
+## Features
+- Admin login for employees to perform CRUD operations on the database
+- Separate login for critics to submit and manage there reviews 
