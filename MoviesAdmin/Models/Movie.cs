@@ -16,7 +16,7 @@
 
         public DateTime Released {  get; set; }
 
-        public string ImageFileName { get; set; } = string.Empty; // stores the rleated image, probably cover for the films
+        public string ImageFileName { get; set; } = string.Empty; // stores the releated image, probably cover for the films
 
         public string Director { get; set; } = string.Empty;
     }
