@@ -18,6 +18,6 @@
 
         public string ImageFileName { get; set; } = string.Empty; // stores the releated image, probably cover for the films
 
-        public string Director { get; set; } = string.Empty;
+        public string Director { get; set; } = string.Empty; // Able to view the director to see other movies any other movies they were involved in
     }
 }
