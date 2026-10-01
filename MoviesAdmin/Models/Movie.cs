@@ -31,7 +31,7 @@ namespace MoviesAdmin.Models
         [Required]
         public DateOnly Released {  get; set; }
 
-        [Display(Name ="Poster Name")]
+        [Display(Name ="Poster file")]
         public string? ImageFileName { get; set; } = string.Empty; //cover for the films, nullable as some may not have a poster
 
         [StringLength(100)]
