@@ -1,23 +1,23 @@
 @model IEnumerable<MoviesAdmin.Models.Movie>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Movies";
 }
 
-<h1>Index</h1>
+<h1>Movies</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table align-middle">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.Description)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.AgeRating)
             </th>
@@ -30,9 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Released)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.ImageFileName)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Director)
             </th>
@@ -42,12 +42,19 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImageFileName))
+                    {
+                        <img src="~/images/movies/@item.ImageFileName"
+                             alt="@item.Title" style="height:60px;" />
+                    }
+                </td>
             <td>
                 @Html.DisplayFor(model => item.Title)
             </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(model => item.Description)
-            </td>
+            </td> *@
             <td>
                 @Html.DisplayFor(model => item.AgeRating)
             </td>
@@ -60,9 +67,9 @@
             <td>
                 @Html.DisplayFor(model => item.Released)
             </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(model => item.ImageFileName)
-            </td>
+            </td> *@
             <td>
                 @Html.DisplayFor(model => item.Director)
             </td>
