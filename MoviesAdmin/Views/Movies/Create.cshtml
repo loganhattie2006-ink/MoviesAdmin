@@ -19,14 +19,14 @@
 
             <div class="mb-3">
                 <label asp-for="Description" class="form-label"></label>
-                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>  @* made the box larger so it looks nicer *@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="AgeRating" class="form-label"></label>
                 <select asp-for="AgeRating" class="form-select">
-                    <option value="">Select...</option>
+                    <option value="">Select...</option> @* dropdown for the ratings*@
                     <option>G</option>
                     <option>PG</option>
                     <option>PG-13</option>
@@ -38,24 +38,24 @@
 
             <div class="mb-3">
                 <label asp-for="Genre" class="form-label"></label>
-                <input asp-for="Genre" class="form-control" />
+                <input asp-for="Genre" class="form-control" />  @* turn this into a dropdown like rating? may be to many genres *@
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Runtime" class="form-label"></label>
-                <input asp-for="Runtime" class="form-control" />
+                <input asp-for="Runtime" class="form-control" /> 
                 <span asp-validation-for="Runtime" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Released" class="form-label"></label>
-                <input asp-for="Released" type="date" class="form-control" />
+                <input asp-for="Released" type="date" class="form-control" />  @* Date selector from the type*@
                 <span asp-validation-for="Released" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
-                <label asp-for="ImageFileName" class="form-label"></label>
+                <label asp-for="ImageFileName" class="form-label"></label>   @* may try editing this field to take a file instead if possible*@
                 <input asp-for="ImageFileName" class="form-control" />
                 <span asp-validation-for="ImageFileName" class="text-danger"></span>
             </div>
