@@ -33,3 +33,43 @@ body {
 .navbar-brand img{
     image-rendering: pixelated  /* This keeps the potato pixelated with resizing*/
 }
+
+:root { /* Colours are setup and applied here*/
+    --russetBrown: #8B5A2B;
+    --cream: #F6EBD4;
+    --text: #2B1D12;
+    --green: #7A9A3A;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--text);
+}
+
+.navbar {
+    background-color: var(--russetBrown);
+    border-bottom: 4px solid var(--green) !important; /* Adds a  highlight under the navbar, also wont show unless i label it important */
+}
+
+a {
+    color: var(--russetBrown); /* Link colour*/
+}
+
+    a:hover {
+        color: var(--green);  /* link hovering colour*/
+    }
+
+.navbar a,
+.navbar a:hover {
+    color: var(--cream);
+}
+
+.btn-primary {
+    background-color: var(--russetBrown);
+    border-color: var(--russetBrown);
+}
+
+    .btn-primary:hover {
+        background-color: #6F4722;
+        border-color: #6F4722;
+    }
