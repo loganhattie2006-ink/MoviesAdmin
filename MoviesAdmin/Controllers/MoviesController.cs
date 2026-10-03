@@ -13,9 +13,26 @@ public class MoviesController : Controller
     }
 
     // GET: MOVIES
-    public async Task<IActionResult> Index()    
+    public async Task<IActionResult> Index(string? sortOrder)
     {
-        return View(await _context.Movie.ToListAsync());
+        // each header link sends the opposite direction of the current sort
+        ViewData["ReleasedSort"] = (sortOrder == null || sortOrder == "releasedDesc") ? "releasedAsc" : "releasedDesc"; // If condition to make it so it will swap between ascending or descening 
+        ViewData["RuntimeSort"] = sortOrder == "runtimeAsc" ? "runtimeDesc" : "runtimeAsc"; // Same as above but for runtime instead
+        ViewData["TitleSort"] = sortOrder == "titleAsc" ? "titleDesc" : "titleAsc"; // A-Z ascending descending
+
+        var movies = _context.Movie.AsQueryable();
+
+        movies = sortOrder switch // switch statement for the text to the actual order code
+        {
+            "releasedAsc" => movies.OrderBy(m => m.Released),
+            "runtimeAsc" => movies.OrderBy(m => m.Runtime),
+            "runtimeDesc" => movies.OrderByDescending(m => m.Runtime),
+            "titleAsc" => movies.OrderBy(m => m.Title),
+            "titleDesc" => movies.OrderByDescending(m => m.Title),
+            _ => movies.OrderByDescending(m => m.Released) // defaults to the newest by catching the null when the page is first opened
+        };
+
+        return View(await movies.ToListAsync());
     }
 
     // GET: MOVIES/Details/5

@@ -15,29 +15,42 @@
 
             <th></th> @*Blank so the image displays first *@
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]">
+                    @Html.DisplayNameFor(model => model.Title)
+                </a>
             </th>
+
             @* <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th> *@
+
             <th>
                 @Html.DisplayNameFor(model => model.AgeRating)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Genre)
             </th>
+
             <th>
-                @Html.DisplayNameFor(model => model.Runtime)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["RuntimeSort"]">
+                    @Html.DisplayNameFor(model => model.Runtime)
+                </a>
             </th>
+
             <th>
-                @Html.DisplayNameFor(model => model.Released)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ReleasedSort"]">
+                    @Html.DisplayNameFor(model => model.Released)
+                </a>
             </th>
+
             @* <th>
                 @Html.DisplayNameFor(model => model.ImageFileName)
             </th> *@
+
             <th>
                 @Html.DisplayNameFor(model => model.Director)
             </th>
+
             <th></th>
         </tr>
     </thead>
